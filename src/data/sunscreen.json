@@ -1,0 +1,55 @@
+{
+    "sunscreens": [
+        {
+            "id": 1,
+            "brand": "Anessa",
+            "name": "Essence UV sunscreen Mild Milk",
+            "spf": "35",
+            "pa": "+++",
+            "type": "Combination",
+            "description": "",
+            "price": "35"
+        },
+        {
+            "id": 2,
+            "brand": "PURITO",
+            "name": "Centella Green Level Unscented Sun",
+            "spf": "50",
+            "pa": "++++",
+            "type": "Chemical",
+            "description": "",
+            "price": "18"
+        },
+        {
+            "id": 3,
+            "brand": "klairs",
+            "name": "Soft Airy UV Essence",
+            "spf": "50",
+            "pa": "++++",
+            "type": "Chemical",
+            "description": "",
+            "price": "25"
+        },
+        {
+            "id": 4,
+            "brand": "Eucerin",
+            "name": "Daily Hydration Cream",
+            "spf": "30",
+            "pa": "NA",
+            "type": "Chemical",
+            "description": "",
+            "price": "8"
+        },
+        {
+            "id": 5,
+            "brand": "La Roche-Posay",
+            "name": "Anthelios 60",
+            "spf": "60",
+            "pa": "NA",
+            "type": "Chemical",
+            "description": "",
+            "price": "35"
+        }
+    ]
+}
+
