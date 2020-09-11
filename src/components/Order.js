@@ -7,14 +7,27 @@ class Order extends React.Component{
         quantity: 1
     }
 
-    handlePlus = () =>{
-        let sum = this.state.quantity + 1
+    handleMinus = () =>{
+        let quantity = this.state.quantity
+        let sum = quantity - 1
+        console.log("quantity", sum)
         this.setState({
             quantity: sum
         })
     }
+
+    handlePlus = () =>{
+        let quantity = this.state.quantity
+        let sum = quantity + 1
+        console.log("quantity", sum)
+        this.setState({
+            quantity: sum
+        })
+    }
+
     render(){
         console.log("Order: ", this.props.quantity)
+        let itemPriceQuantity = this.props.price * this.state.quantity
         return(
             <Container>
                 <div>
@@ -36,15 +49,11 @@ class Order extends React.Component{
                                 +
                             </button>
                             <div style={{color: "green", marginLeft: 50}}>
-                                {this.props.price}
+                                {itemPriceQuantity}
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* {this.props.name} by {this.props.brand}
-                </table>
-                {this.props.price} */}
-
             </Container>
         )
     }

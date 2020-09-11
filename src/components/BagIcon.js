@@ -8,7 +8,14 @@ function BagIcon(props) {
 
 
   let renderBagItems = () => {
-    return props.bagList.map(item => <Order key={item.id} name={item.name} brand={item.brand} price={item.price} quantity={props.quantity}/>)
+    return props.bagList.map(
+      item => <Order 
+        key={item.id} 
+        name={item.name} 
+        brand={item.brand} 
+        price={item.price} 
+        quantity={props.quantity} 
+        updateTotal={props.updateTotal}/>)
   }
   
   return (

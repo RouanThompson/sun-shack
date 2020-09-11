@@ -20,6 +20,15 @@ class HomePage extends React.Component {
         })
     }
 
+    updateTotal = (price, quantity) => {
+        const updatedTotal = (price * quantity) + this.state.total
+        console.log("total", this.state.total)
+        this.setState({
+            total: updatedTotal
+        })
+
+    }
+
     addToBagList = (newItem) => {
 
         // returns a new array with the new item and items within bag list
@@ -63,7 +72,7 @@ class HomePage extends React.Component {
           <Container>
               <h1>Sun Shack</h1>
               <Search searchTerm={searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-              <BagIcon bagList={bagList} total={total} quantity={quantity}/>
+              <BagIcon bagList={bagList} total={total} quantity={quantity} updateTotal={this.updateTotal}/>
               <ItemCollection sunscreens={this.filteredArray()} bagList={bagList} addToBagList={this.addToBagList} total={total}/>
           </Container>
         )
