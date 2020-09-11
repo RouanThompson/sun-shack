@@ -4,33 +4,34 @@ import { Button, Icon, Modal } from "semantic-ui-react";
 
 function BagIcon(props) {
   const [open, setOpen] = React.useState(false)
-  // const {bagList} = this.props
-  // console.log(bagList)
-  props.bagList.map(item => console.log(item))
-  // console.log(this.props.bagList)
+  props.bagList.map(item => console.log("BagIcon: ", item))
 
-        return (
-          
-          <Modal
-            open={open}
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            trigger={<Button>Bag</Button>}
-          >
 
-          <Modal.Header>Checkout</Modal.Header>
-          <Modal.Content image scrolling>
-    
-            <Modal.Description>
-              <Order bagList={props.bagList}/>    
-            </Modal.Description>
-          </Modal.Content>
-          <Modal.Actions>
-            <Button onClick={() => setOpen(false)} primary>
-              Checkout <Icon name='chevron right' />
-            </Button>
-          </Modal.Actions>
-        </Modal>
-        )
+  let renderBagItems = () => {
+    return props.bagList.map(item => <Order key={item.id} name={item.name} brand={item.brand} price={item.price} quantity={props.quantity}/>)
+  }
+  
+  return (
+    <Modal
+      open={open}
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      trigger={<Button>Bag</Button>}
+    >
+
+    <Modal.Header>Checkout</Modal.Header>
+      <Modal.Content image scrolling>
+        <Modal.Description>
+            {renderBagItems()}
+            <div style={{color: "green", marginLeft: 500}}>TOTAL:  {props.total}</div>    
+        </Modal.Description>
+      </Modal.Content>
+        <Modal.Actions>
+          <Button onClick={() => setOpen(false)} primary>
+            Place Order <Icon name='chevron right' />
+          </Button>
+        </Modal.Actions>
+    </Modal>
+  )
 }
 export default BagIcon

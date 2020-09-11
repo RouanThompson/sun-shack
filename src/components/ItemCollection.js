@@ -4,8 +4,10 @@ import ItemCard from './ItemCard'
 class ItemCollection extends React.Component {
 
     renderCards = () => {
-        const {sunscreens, bagList, addToBagList} = this.props
-        return sunscreens.map(sunscreen => <ItemCard key={sunscreen.id} brand={sunscreen.brand} name={sunscreen.name} spf={sunscreen.spf} pa={sunscreen.pa} type={sunscreen.type} description={sunscreen.description} price={sunscreen.price} likes={sunscreen.likes} bagList={bagList} addToBagList={addToBagList}/>)
+        const {sunscreens, bagList, addToBagList, total} = this.props
+        // console.log(sunscreens)
+        
+        return sunscreens.map(sunscreen => <ItemCard key={sunscreen.id} id={sunscreen.id} brand={sunscreen.brand} name={sunscreen.name} spf={sunscreen.spf} pa={sunscreen.pa} type={sunscreen.type} description={sunscreen.description} price={sunscreen.price} likes={sunscreen.likes} bagList={bagList} addToBagList={addToBagList} total={total}/>)
     }
 
     render() {

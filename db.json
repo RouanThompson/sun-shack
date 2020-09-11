@@ -9,7 +9,8 @@
             "type": "Combination",
             "description": "",
             "price": 35,
-            "likes": 1000
+            "likes": 1000,
+            "quantity": 1
         },
         {
             "id": 2,
@@ -20,7 +21,8 @@
             "type": "Chemical",
             "description": "",
             "price": 18,
-            "likes": 780
+            "likes": 780,
+            "quantity": 1
         },
         {
             "id": 3,
@@ -31,7 +33,8 @@
             "type": "Chemical",
             "description": "",
             "price": 25,
-            "likes": 823
+            "likes": 823,
+            "quantity": 1
 
         },
         {
@@ -43,7 +46,8 @@
             "type": "Chemical",
             "description": "",
             "price": 8,
-            "likes": 545
+            "likes": 545,
+            "quantity": 1
         },
         {
             "id": 5,
@@ -54,7 +58,8 @@
             "type": "Chemical",
             "description": "",
             "price": 35,
-            "likes": 639
+            "likes": 639,
+            "quantity": 1
         }
     ]
 }

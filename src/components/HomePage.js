@@ -9,7 +9,9 @@ class HomePage extends React.Component {
     state = {
         sunscreens: [],
         searchTerm: "",
-        bagList: []
+        bagList: [],
+        total: 0,
+        quantity: 1
     }
 
     changeSearchTerm = termFromChild => {
@@ -18,14 +20,18 @@ class HomePage extends React.Component {
         })
     }
 
-    addToBagList = newItem => {
+    addToBagList = (newItem) => {
 
         // returns a new array with the new item and items within bag list
         const updatedBagList =  [newItem, ...this.state.bagList]
 
-        // updates BagList state to that of the new array and triggers a render
+        // const sum = price * quantity
+        const updatedTotal = newItem.price + this.state.total
+
+        // updates state to that of the new value and triggers a render
         this.setState({
-            bagList: updatedBagList
+            bagList: updatedBagList,
+            total: updatedTotal
         })
     }
 
@@ -51,13 +57,14 @@ class HomePage extends React.Component {
     }
 
     render(){
-        const {searchTerm, bagList} = this.state
+        const {searchTerm, bagList, total, quantity} = this.state
+        // console.log(bagList)
         return (
           <Container>
               <h1>Sun Shack</h1>
               <Search searchTerm={searchTerm} changeSearchTerm={this.changeSearchTerm}/>
-              <BagIcon bagList={bagList}/>
-              <ItemCollection sunscreens={this.filteredArray()} bagList={bagList} addToBagList={this.addToBagList}/>
+              <BagIcon bagList={bagList} total={total} quantity={quantity}/>
+              <ItemCollection sunscreens={this.filteredArray()} bagList={bagList} addToBagList={this.addToBagList} total={total}/>
           </Container>
         )
     }

@@ -5,11 +5,16 @@ class ItemCard extends React.Component{
     handleAdd = () => {
         const {addToBagList} = this.props
         console.log("I was clicked")
+        console.log("my id:", this.props.id)
+        console.log("my id:", this.props.name)
+
+
 
         let addItem = {
+            id: this.props.id,
             name: this.props.name,
             brand: this.props.brand,
-            price: this.props.price
+            price: this.props.price,
         }
 
         addToBagList(addItem)
@@ -59,4 +64,3 @@ class ItemCard extends React.Component{
 }
 
 export default ItemCard
-
